@@ -54,7 +54,7 @@ public class RocketMQReceiverTest {
     }
 
     @Test
-    public void testRocketMQReceiver() {
+    public void testRocketMQReceiver() throws Exception{
         SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("NetworkWordCount");
         JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(5));
         Properties properties = new Properties();
@@ -64,11 +64,7 @@ public class RocketMQReceiverTest {
         JavaInputDStream ds = RocketMqUtils.createJavaMQPushStream(jssc, properties, StorageLevel.MEMORY_ONLY());
         ds.print();
         jssc.start();
-        try {
-            jssc.awaitTerminationOrTimeout(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        jssc.awaitTerminationOrTimeout(10000);
         jssc.stop();
     }
 }

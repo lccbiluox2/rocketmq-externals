@@ -52,6 +52,7 @@ private object RocketMQWriter extends Logging {
       schema: Seq[Attribute],
       options: ju.Map[String, String],
       topic: Option[String] = None): Unit = {
+
     schema.find(_.name == TOPIC_ATTRIBUTE_NAME).getOrElse(
       if (topic.isEmpty) {
         throw new AnalysisException(s"topic option required when no " +
