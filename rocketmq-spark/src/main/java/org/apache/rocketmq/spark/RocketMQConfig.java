@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- *
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,7 +43,7 @@ public class RocketMQConfig {
     public static final String DEFAULT_CLIENT_IP = RemotingUtil.getLocalAddress();
 
     public static final String CLIENT_CALLBACK_EXECUTOR_THREADS = "client.callback.executor.threads";
-    public static final int DEFAULT_CLIENT_CALLBACK_EXECUTOR_THREADS = Runtime.getRuntime().availableProcessors();;
+    public static final int DEFAULT_CLIENT_CALLBACK_EXECUTOR_THREADS = Runtime.getRuntime().availableProcessors();
 
     public static final String NAME_SERVER_POLL_INTERVAL = "nameserver.poll.interval";
     public static final int DEFAULT_NAME_SERVER_POLL_INTERVAL = 30000; // 30 seconds
@@ -55,7 +55,7 @@ public class RocketMQConfig {
     // ------- the following is for push consumer mode -------
     /**
      * RocketMq consumer group
-      */
+     */
     public static final String CONSUMER_GROUP = "consumer.group"; // Required
 
     /**
@@ -100,9 +100,9 @@ public class RocketMQConfig {
      * Maximum rate (number of records per second) at which data will be read from each RocketMq partition ,
      * and the default value is "-1", it means consumer can pull message from rocketmq as fast as the consumer can.
      * Other that, you also enables or disables Spark Streaming's internal backpressure mechanism by the config
-     *  "spark.streaming.backpressure.enabled".
+     * "spark.streaming.backpressure.enabled".
      */
-    public static final String  MAX_PULL_SPEED_PER_PARTITION = "pull.max.speed.per.partition";
+    public static final String MAX_PULL_SPEED_PER_PARTITION = "pull.max.speed.per.partition";
 
     /**
      * To pick up the consume speed, the consumer can pull a batch of messages at a time. And the default

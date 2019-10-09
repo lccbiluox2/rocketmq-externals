@@ -26,8 +26,10 @@ import javax.annotation.Resource;
 import org.apache.commons.collections.CollectionUtils;
 
 public abstract class AbstractCommonService {
+
     @Resource
     protected MQAdminExt mqAdminExt;
+
     protected final Set<String> changeToBrokerNameSet(HashMap<String, Set<String>> clusterAddrTable,
         List<String> clusterNameList, List<String> brokerNameList) {
         Set<String> finalBrokerNameList = Sets.newHashSet();
